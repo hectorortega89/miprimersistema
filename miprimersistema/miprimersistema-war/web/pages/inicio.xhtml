@@ -10,29 +10,25 @@
     <ui:define name="contenido" >
         <div class="ui-g">
             <div class="ui-g-12" style="text-align: center">
-
-                <h1>INICIO</h1>
+                <h2>Bienvenidos</h2>
+                <img src="../recursos/images/ferretero.png"></img>
 
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../recursos/images/herramientas1.jpg" width="400px" height="400px" class="d-block w-100" alt="..."></img>
-                        
-                        
-                            <img src="../recursos/images/herramientas2.jpg" width="400px" height="400px" class="d-block w-100" alt="..."></img>
-                        
-                        
-                            <img src="../recursos/images/herramientas3.jpg" width="400px" height="400px" class="d-block w-100" alt="..."></img>
-                        
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                            <p:panelGrid columns="2">
+                                <f:facet name="header">
+                                    <p:graphicImage style="padding-bottom: 100px"> <a href="productos.jsf"><img src="../recursos/images/herramientas1.jpg" width="300px" height="300px" class="d-block w-100" alt="..." ></img></a>
+                                        <a href="productos.jsf"><img src="../recursos/images/herramientas2.jpg" width="300px" height="300px" class="d-block w-100" alt="..." ></img></a>
+                                        <a href="productos.jsf"><img src="../recursos/images/herramientas3.jpg" width="300px" height="300px" class="d-block w-100" alt="..." ></img></a></p:graphicImage>
+                                </f:facet>
+
+
+                            </p:panelGrid>
+
+
+                        </div>
+
                     </div>
                 </div>
 
