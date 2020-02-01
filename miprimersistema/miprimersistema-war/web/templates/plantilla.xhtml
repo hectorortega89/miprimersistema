@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <title>FERRIMATEL</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../recursos/css/main.css" />
+    </h:head>
+    <h:body style="background-color:rgb(255, 255, 0)">
+
+        <p:fieldset>
+            <h1 style="color:Tomato; background-color:rgb(255, 255, 0); text-align:center; border:2px solid Tomato;"> COMERCIAL FERRIMATEL E HIJOS</h1>
+        </p:fieldset>
+
+
+
+
+        <p:megaMenu orientation="#{megaMenuView.orientation}" style="margin-top:20px">
+            <p:menuitem value="INICIO" url="../pages/inicio.jsf" />
+            <p:submenu label="CATEGORÍAS" icon="pi pi-check">
+                <p:column>
+                    <p:submenu label="MATERIAL DE CONSTRUCCIÓN">
+                        <p:menuitem value="CEMENTO" url="../pages/categorias.jsf" />
+                        <p:menuitem value="BONDEX" url="../pages/categorias.jsf" />
+                        <p:menuitem value="PINTURAS" url="../pages/categorias.jsf" />
+                        <p:menuitem value="HOGAR" url="../pages/categorias.jsf" />
+
+                    </p:submenu>
+                    <p:submenu label="MATERIAL ELÉCTRICO">
+                        <p:menuitem value="LAMPARAS" url="#" />
+                        <p:menuitem value="FOCOS LED" url="#" />
+                        <p:menuitem value="INTERRUPTORES-TOMACORRIENTES" url="#" />
+                    </p:submenu>
+
+                    <p:submenu label="HERRAMIENTAS">
+                        <p:menuitem value="MARTILLOS" url="#" />
+                        <p:menuitem value="DESTORNILLADORES" url="#" />
+                        <p:menuitem value="TALADROS" url="#" />
+                        <p:menuitem value="CINCELES" url="#" />
+                    </p:submenu>
+
+                </p:column>
+
+
+            </p:submenu>
+
+            <p:submenu label="LOCALES" icon="pi pi-file">
+
+                <p:column>
+                    <p:submenu label="LOCAL 1">
+                        <p:menuitem value="COMITE DEL PUEBLO" 
+                                    url="https://www.google.com/maps/place/Comit%C3%A9+del+Pueblo,+Quito/@-0.1242341,-78.4661675,18z/data=!4m5!3m4!1s0x91d58f8e4f49ffa5:0xf678a173e32f41b!8m2!3d-0.1224086!4d-78.4652483" />
+
+                    </p:submenu>
+                    <p:submenu label="LOCAL 2">
+                        <p:menuitem value="LA ROLDÓS" url="#" />
+
+                    </p:submenu>
+
+                    <p:submenu label="LOCAL 3">
+                        <p:menuitem value="CARAPUNGO" url="#" />
+
+                    </p:submenu>
+
+                </p:column>
+
+            </p:submenu>
+
+            <p:submenu label="MARCAS" icon="pi pi-pencil">
+                <p:column>
+                    <p:submenu label="PINTURAS">
+                        <p:menuitem value="ABRO" url="#" />
+                        <p:menuitem value="PINTULAC" url="#" />
+                    </p:submenu>
+                    <p:submenu label="HERRAMIENTAS">
+                        <p:menuitem value="STHIL" url="#" />
+                        <p:menuitem value="BLACK-DECKER" url="#" />
+                        <p:menuitem value="PERLES" url="#" />
+                    </p:submenu>
+
+                </p:column>
+            </p:submenu>
+
+            <p:submenu label="NOSOTROS" icon="pi pi-briefcase">
+                <p:column>
+                    <p:submenu label="QUIENES SOMOS">
+                        <p:menuitem value="ACERCA DE" url="#" />
+                        <p:menuitem value="FAQ" url="#" />
+                        <p:menuitem value="LOGIN" url="../pages/login.jsf" />
+
+                    </p:submenu>
+                </p:column>
+
+            </p:submenu>
+        </p:megaMenu>
+
+
+        <section id="banner">
+            <div class="content">
+                <ui:insert name="contenido"/>
+
+            </div>
+
+        </section>
+
+
+        <!-- Scripts -->
+        <script src="../recursos/js/jquery.min.js"></script>
+        <script src="../recursos/js/browser.min.js"></script>
+        <script src="../recursos/js/breakpoints.min.js"></script>
+        <script src="../recursos/js/util.js"></script>
+        <script src="../recursos/js/main.js"></script>
+        <script type="text/javascript">
+            var j$ = jQuery.noConflict();
+        </script>
+
+
+
+        <footer>
+
+
+
+        </footer>
+
+
+    </h:body>
+</html>

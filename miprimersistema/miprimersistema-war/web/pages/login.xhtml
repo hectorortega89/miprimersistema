@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="../templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="contenido" >
+        <div class="ui-g">
+            <div class="ui-g-12" style="text-align: center">
+
+                <h1>LOGIN</h1>
+
+
+                <h:form>
+
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel value="VENDEDOR:" for="acSimple" />
+                        <p:autoComplete style="align-self:left; width:500px" id="acSimple" value="#{autoCompleteView.txt1}" completeMethod="#{autoCompleteView.completeText}" />
+                        <h:outputText value="CONTRASEÑA" />
+                        <p:password style="align-content: left; width:500px" id="nonFeedback" value="#{passwordView.password1}" />
+
+                    </h:panelGrid>
+
+                    <p:commandButton value="ENTRAR" />
+
+
+                </h:form>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </ui:define>    
+</ui:composition>
