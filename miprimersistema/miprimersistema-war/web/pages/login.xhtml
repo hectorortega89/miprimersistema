@@ -11,27 +11,36 @@
         <div class="ui-g">
             <div class="ui-g-12" >
                 <h1 style="text-align: center">LOGIN</h1>
+                <style type="text/css">
+                    .ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
+                        text-align: center;
+                    }
+
+                    .customPanelGrid .ui-panelgrid-content {
+                        align-items: center;
+                    }
+                </style>
 
 
-                <p:panelGrid columns="2" style="width: 375px; margin-right: 30em; margin-left: 30em;">
-                    <h:form style="width: 350px">
-                        <!-- USUARIO--> 
-                        <h:outputText value="USUARIO: " />
+                <h:form style="width: 500px; margin-left: 400px; margin-right:400px">    
+
+                    <p:panelGrid styleClass="showcase-text-align-center">
+
                         <p:inputText id="float-input" value="#{basicView.text}" />
-                        <!-- CONTRASEÑA--> 
-                        <h:outputText value="CONTRASEÑA: " />
-                        <p:password id="nonFeedback" value="#{passwordView.password1}" />
-                        <!-- BOTONES--> 
+                        <p:outputLabel for="@previous" value="Username" />
+                        <p:inputText id="float-input" value="#{basicView.text}" />
+                        <p:outputLabel for="@previous" value="Descripcion" />
+
+
                         <p:growl id="growl" life="2000" />
-                        <p:commandButton value="Ingresar" id="ingresar" action="#{buttonView.buttonAction}" style="margin-right:20px;" ajax="false" />
-                        <p:commandButton value="Cancelar" id="cancelar" action="#{buttonView.buttonAction}" style="margin-right:20px;" ajax="false" />
-                    </h:form> 
-                </p:panelGrid>
+
+                        <p:commandButton value="GUARDAR" id="ajax" update="growl" action="#{buttonView.buttonAction}" style="margin-right:20px;" styleClass="ui-priority-primary" />
+                        <p:commandButton value="LIMPIAR" id="ajax" update="growl" action="#{buttonView.buttonAction}" style="margin-right:20px;" styleClass="ui-priority-primary" />
+                    </p:panelGrid>
+                </h:form>
 
             </div>
         </div>
-
-
 
     </ui:define>    
 </ui:composition>
