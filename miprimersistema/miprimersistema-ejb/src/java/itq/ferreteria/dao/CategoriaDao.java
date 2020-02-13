@@ -1,4 +1,3 @@
-
 package itq.ferreteria.dao;
 
 import itq.ferreteria.modelo.Categoria;
@@ -6,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.Query;
-
 
 @Stateless
 public class CategoriaDao extends Generico<Categoria> {
@@ -33,16 +31,35 @@ public class CategoriaDao extends Generico<Categoria> {
             //en la variable listaCategoria se almacena el resultado de la nueva Query en formato ResultList que devuelve una lista de objetos resultantes
             listaCategoria = nuevaQuery.getResultList();
             //si la listaCategoria es no-nula y listaCategoria es diferente de vacia, retorna verdad
-            if(listaCategoria!=null && !listaCategoria.isEmpty()){
-            return true;
-            }else {
+            if (listaCategoria != null && !listaCategoria.isEmpty()) {
+                return true;
+            } else {
                 return false;
             }
-        } catch (Exception e) { 
+        } catch (Exception e) {
             return false;
         }
 
-       
+    }
+
+    public List<Categoria> obtenerCategoriasActivasDao() {
+        try {
+            List<Categoria> resultado = new ArrayList<>();
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT c FROM Categoria c WHERE c.estadpCategoria = :estadpCategoria");
+            Query query;
+            query = getEntityManager().createQuery(sql.toString()).setParameter("estadpCategoria", true);
+            resultado = query.getResultList();
+            if (resultado != null && !resultado.isEmpty()) {
+                return resultado;
+            } else {
+                return null;
+            }
+
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
 }

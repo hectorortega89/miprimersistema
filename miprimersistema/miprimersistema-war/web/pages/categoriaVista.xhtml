@@ -12,31 +12,69 @@
     <ui:define name="contenido" >
         <div class="ui-g">
             <div class="ui-g-12">
-
+                <div>
                 <h:form id="frmCategoria">
                     <p:messages id="messages" showDetail="true" closable="true">
                         <p:autoUpdate />
                     </p:messages>
 
                     <p:panel header="Registro de Categoría" >
-                        <p:panelGrid id="pgCategoria" columns="2" layout="grid">            
-                            <p:outputLabel value="Nombre"><span class="rojo">*</span></p:outputLabel>
-                            <p:inputText value="#{categoriaControlador.categoria.nombr}" required="true" requiredMessage="Campo requerido"></p:inputText>
-                            <p:outputLabel value="Descripción"></p:outputLabel>
-                            <p:inputText value="#{categoriaControlador.categoria.descripcionCategoria}" ></p:inputText>
-                        </p:panelGrid>
-                        <center>
-                            <p:commandButton value="Guardar" icon="ui-icon-disk" 
-                                             actionListener="#{categoriaControlador.guardarCategoria()}" 
-                                             process="frmCategoria" update="frmCategoria"></p:commandButton>
 
-                            <p:commandButton value="Limpiar" icon="ui-icon-refresh" actionListener=" " process="frmCategoria" update="frmCategoria"></p:commandButton>
+                        <p:panelGrid id="pgCategoria" columns="2" layout="grid">    
+
+                            <p:outputLabel value="Nombre"><span class="rojo">*</span></p:outputLabel>
+
+                            <p:inputText value="#{categoriaControlador.categoria.nombr}" required="true" requiredMessage="Campo requerido"></p:inputText>
+
+                            <p:outputLabel value="Descripción"></p:outputLabel>
+
+                            <p:inputText value="#{categoriaControlador.categoria.descripcionCategoria}" ></p:inputText>
+
+                        </p:panelGrid>
+
+                        <center>
+
+                            <p:commandButton value="Guardar" icon="ui-icon-disk" actionListener="#{categoriaControlador.guardarCategoria()}" process="frmCategoria" update="frmCategoria,dtCategoria" ></p:commandButton>
+
+                             <p:commandButton value="Actualizar" icon="ui-icon-pencil" actionListener="{categoriaControlador.actualizarCategoria}" process="frmCategoria" update="frmCategoria" ></p:commandButton>
+                            
+                                                        <!--<p:commandButton value="Limpiar" icon="ui-icon-refresh" actionListener="{categoriaControlador.limpiarCategoria()}" process="frmCategoria" update="frmCategoria"></p:commandButton>-->
                         </center>
                     </p:panel>
 
+                    <p:panel header="Lista de Categorías registradas" >
+                        <p:dataTable id="dtCategoria" var="cat" value="#{categoriaControlador.listaCategoriasActivas}"
+                                     rows="10"
+                                     paginator="true"
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     rowIndexVar="index">
+                            <p:column headerText="...">
+                                <h:outputText value="" />
+                            </p:column>
 
-                </h:form>
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{cat.nombr}" />
+                            </p:column>
 
+                            <p:column headerText="Descripción">
+                                <h:outputText value="#{cat.descripcionCategoria}" />
+                            </p:column>
+
+                            <p:column headerText="..." styleClass="centrar" style="width: 60px">
+                                <p:commandButton icon="ui-icon-pencil" process="@this" actionListener="#{categoriaControlador.habilitarActualizacion(cat)}" update="frmCategoria"></p:commandButton>
+                            </p:column>
+
+                            <p:column headerText="..." styleClass="centrar" style="width: 60px">
+                                <p:commandButton icon="ui-icon-close" process="@this" actionListener="#{categoriaControlador.eliminarCategoria(cat)}" update="frmCategoria"></p:commandButton>
+                            </p:column>
+
+
+                        </p:dataTable>
+                    </p:panel>
+                </h:form> 
+
+
+                </div>
             </div>           
         </div>
     </ui:define>    
